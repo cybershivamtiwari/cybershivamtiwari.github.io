@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shivam Tiwari — Salesforce Developer & Solutions Architect</title>
+<meta name="description" content="Salesforce Developer and Solutions Architect specialising in Agentforce, Revenue Cloud, Health Cloud, LWC and Apex.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#f7f9fc;--surface:#ffffff;--text:#0b1a2e;--muted:#52627a;--line:#dbe3ee;
+  --accent:#0a6ed1;--accent2:#6d3fd1;--chip:#eaf2fc;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#070d17;--surface:#0e1726;--text:#e8eef8;--muted:#93a4bd;--line:#1c2a41;
+    --accent:#4da3ff;--accent2:#a98bff;--chip:#13233b;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#070d17;--surface:#0e1726;--text:#e8eef8;--muted:#93a4bd;--line:#1c2a41;
+  --accent:#4da3ff;--accent2:#a98bff;--chip:#13233b;color-scheme:dark;
+}
+html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6}
+h1,h2,h3{font-family:"Space Grotesk",Inter,system-ui,sans-serif;line-height:1.15;margin:0}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-family:"Space Grotesk",sans-serif;font-weight:700;color:var(--text)}
+.links{display:flex;gap:18px;align-items:center;font-size:.92rem;overflow-x:auto}
+.links a{color:var(--muted);white-space:nowrap}
+.links a:hover{color:var(--text)}
+button.theme{background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:.9rem}
+.hero{padding:84px 0 56px}
+.eyebrow{display:inline-block;background:var(--chip);color:var(--accent);padding:5px 12px;border-radius:99px;font-size:.82rem;font-weight:500;margin-bottom:18px}
+.hero h1{font-size:clamp(2.3rem,6vw,4rem);letter-spacing:-.02em}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{max-width:640px;color:var(--muted);font-size:1.1rem;margin:20px 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:600;font-size:.95rem;border:1px solid var(--line);color:var(--text);background:var(--surface)}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border-color:transparent}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:44px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.stat b{display:block;font-family:"Space Grotesk",sans-serif;font-size:1.7rem}
+.stat span{color:var(--muted);font-size:.88rem}
+section{padding:56px 0;border-top:1px solid var(--line)}
+section h2{font-size:1.8rem;margin-bottom:8px}
+.sub{color:var(--muted);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--accent)}
+.card h3{font-size:1.15rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.tag{background:var(--chip);color:var(--accent);font-size:.76rem;padding:3px 9px;border-radius:99px;font-weight:500}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.skills h3{font-size:1rem;margin-bottom:10px}
+.cert{display:flex;gap:12px;align-items:center}
+.badge{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;display:grid;place-items:center;font-weight:700;flex:none}
+.cert b{display:block;font-size:.96rem}.cert span{color:var(--muted);font-size:.82rem}
+.talk{border-left:3px solid var(--accent);padding-left:18px}
+.hide{display:none!important}
+footer{padding:36px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;text-align:center}
+@media (max-width:640px){.links a.opt{display:none}.hero{padding:56px 0 40px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap"><nav>
+    <a class="logo" href="#top">Shivam Tiwari</a>
+    <div class="links">
+      <a class="opt" href="#about">About</a><a href="#projects">Projects</a><a class="opt" href="#skills">Skills</a><a class="opt" href="#certs">Certifications</a><a href="#contact">Contact</a>
+      <button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button>
+    </div>
+  </nav></div>
+</header>
+
+<main id="top">
+<div class="wrap">
+  <div class="hero">
+    <span class="eyebrow">Salesforce Developer · Solutions Architect · Speaker</span>
+    <h1>Building <span class="grad">intelligent, scalable</span> Salesforce solutions.</h1>
+    <p class="lead">I design and build enterprise solutions across Agentforce, Revenue Cloud, Health Cloud and Sales Cloud, from AI agents and pricing models to REST integrations and managed packages.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">View projects</a>
+      <a class="btn" href="https://github.com/cybershivamtiwari" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn hide" data-link="resume" target="_blank" rel="noopener">Résumé</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>3.5+</b><span>Years on Salesforce</span></div>
+      <div class="stat"><b>4</b><span>Salesforce certifications</span></div>
+      <div class="stat"><b>7,000+</b><span>Products modeled in one RCA catalog build</span></div>
+      <div class="stat"><b>Noida</b><span>India · open to collaborate</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="about"><div class="wrap">
+  <h2>About</h2>
+  <p class="sub">What I do and how I work.</p>
+  <div class="grid">
+    <div class="card"><h3>Build</h3><p>Apex, LWC and integration services written for bulk volumes, testability and long-term maintainability, not just a passing demo.</p></div>
+    <div class="card"><h3>Architect</h3><p>I scope and estimate enterprise Revenue Cloud implementations: product catalogs, bundles, options and pricing.</p></div>
+    <div class="card"><h3>Share</h3><p>I write about Salesforce and speak at community events to make complex platform topics practical.</p></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <p class="sub">Client work is described without client names or proprietary data. Repos marked “sample” contain sanitized, generic code only.</p>
+  <div class="grid">
+    <div class="card"><h3>Revenue Cloud Advanced catalog loaders</h3><p>Built a catalog of about 7,000 products for a machine-tool distributor on standard RCA objects only: categories, classifications, spec attributes, bundles, component groups and pricebook entries. Idempotent get-or-create Apex builders, one loader per product model, and 317 configuration rules (55 variant-restriction rules) created by scripting the Rule Library createRule call.</p>
+      <div class="tags"><span class="tag">Revenue Cloud Advanced</span><span class="tag">Apex</span><span class="tag">Spreadsheet parsing</span></div>
+      <a class="hide" data-link="rcaLoader" target="_blank" rel="noopener">View sample repository →</a></div>
+    <div class="card"><h3>Agentforce Agent API demo</h3><p>Agentforce integrated with a custom LWC chat on an Experience Site: server-side OAuth client-credentials flow in Apex, Server-Sent Events streaming in the browser and a CSS-variable design system. Solved CSP connect-src, guest-user Apex access and email-domain verification issues.</p>
+      <div class="tags"><span class="tag">Agentforce</span><span class="tag">Apex</span><span class="tag">LWC</span><span class="tag">Experience Cloud</span></div>
+      <a class="hide" data-link="swiftPizza" target="_blank" rel="noopener">View sample repository →</a></div>
+    <div class="card"><h3>License &amp; renewal opportunity automation</h3><p>Replaced per-product callouts that caused HTTP 429 errors with one batched Gemini API call through a Named Credential. Added date validation, fallbacks, a duplicate-renewal guard and a multi-step opportunity workflow with Slack channel selection.</p>
+      <div class="tags"><span class="tag">Apex</span><span class="tag">LWC</span><span class="tag">Gemini API</span><span class="tag">Slack</span></div>
+      <a class="hide" data-link="batchedAi" target="_blank" rel="noopener">View sample repository →</a></div>
+    <div class="card"><h3>Managed package: guest-user context executor</h3><p>A reusable without-sharing executor pattern that fixes guest-user record creation in a Shopify–Salesforce sync package, now being applied to a second package.</p>
+      <div class="tags"><span class="tag">Apex</span><span class="tag">Managed packages</span><span class="tag">Experience Cloud</span><span class="tag">Shopify</span></div>
+      <a class="hide" data-link="contextExecutor" target="_blank" rel="noopener">View sample repository →</a></div>
+    <div class="card"><h3>Order Management: ShipStation tracking</h3><p>Bulkified a ShipStation tracking service and built test coverage for OrderSummary updates, working around ConnectApi limits in data-siloed tests.</p>
+      <div class="tags"><span class="tag">Apex</span><span class="tag">Order Management</span><span class="tag">ShipStation API</span></div></div>
+    <div class="card"><h3>B2B storefront product detail page</h3><p>Rebuilt the product-info layout from Figma (no-image, with-image and Switch &amp; Save variants) on an existing Visualforce, Handlebars and JavaScript code base.</p>
+      <div class="tags"><span class="tag">Visualforce</span><span class="tag">Handlebars</span><span class="tag">JavaScript</span><span class="tag">Figma</span></div></div>
+    <div class="card"><h3>Microsoft Graph + Supabase + Salesforce</h3><p>Salesforce architect on a client engagement: built a webhook ingestion layer across Microsoft Graph, Supabase edge functions and Salesforce, and handled the Salesforce-side configuration.</p>
+      <div class="tags"><span class="tag">Microsoft Graph</span><span class="tag">Supabase (Deno)</span><span class="tag">Apex</span></div></div>
+  </div>
+  <h3 style="margin:36px 0 14px">More client delivery</h3>
+  <div class="grid">
+    <div class="card"><h3>B2B Commerce (LWR) portal</h3><p>Custom checkout, catalog navigation and Azure-payload mapping for a UK healthcare ordering portal.</p></div>
+    <div class="card"><h3>Bidirectional REST integrations</h3><p>Salesforce with NikoHealth, DocuSign and pVerify: patient data, orders, invoices and prescriptions, with location-based payload routing.</p></div>
+    <div class="card"><h3>Health Cloud &amp; Education Cloud</h3><p>Lead-conversion automation, document categorization, course enrollment flows and an Experience Cloud preference center.</p></div>
+    <div class="card"><h3>CPQ to Revenue Cloud migration</h3><p>Custom migration tool plus RCA pricing procedures, product rules and configuration rules.</p></div>
+    <div class="card"><h3>Agentforce implementation</h3><p>Agent topics, actions and prompt templates, plus resolution of complex metadata packaging errors.</p></div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <p class="sub">Core platform and tooling.</p>
+  <div class="skills">
+    <div class="card"><h3>Platforms</h3><div class="tags"><span class="tag">Sales Cloud</span><span class="tag">Health Cloud</span><span class="tag">Revenue Cloud Advanced</span><span class="tag">Agentforce</span><span class="tag">Experience Cloud</span><span class="tag">B2B Commerce (LWR)</span><span class="tag">Education Cloud</span><span class="tag">Order Management</span></div></div>
+    <div class="card"><h3>Development</h3><div class="tags"><span class="tag">Apex</span><span class="tag">LWC</span><span class="tag">SOQL</span><span class="tag">JavaScript</span><span class="tag">Node.js</span></div></div>
+    <div class="card"><h3>Integration & delivery</h3><div class="tags"><span class="tag">REST &amp; SOAP APIs</span><span class="tag">Named Credentials</span><span class="tag">Node.js middleware</span><span class="tag">Managed packages</span><span class="tag">Salesforce CLI</span><span class="tag">GitHub Actions</span></div></div>
+  </div>
+</div></section>
+
+<section id="certs"><div class="wrap">
+  <h2>Certifications</h2>
+  <p class="sub">Salesforce credentials.</p>
+  <div class="grid">
+    <div class="card cert"><div class="badge">AF</div><div><b>Agentforce Specialist</b><span>Salesforce Certified</span></div></div>
+    <div class="card cert"><div class="badge">PD</div><div><b>Platform Developer I</b><span>Salesforce Certified</span></div></div>
+    <div class="card cert"><div class="badge">PF</div><div><b>Platform Foundations</b><span>Salesforce Certified</span></div></div>
+    <div class="card cert"><div class="badge">AI</div><div><b>AI Associate</b><span>Salesforce Certified</span></div></div>
+  </div>
+</div></section>
+
+<section id="awards"><div class="wrap">
+  <h2>Recognition</h2>
+  <p class="sub">Workplace awards.</p>
+  <div class="grid">
+    <div class="card"><h3>Star Performer</h3><p>2025</p></div>
+    <div class="card"><h3>Shining Star</h3><p>2025</p></div>
+    <div class="card"><h3>Support Excellence</h3><p>2024</p></div>
+    <div class="card"><h3>Dedicated Dynamo</h3><p>2024</p></div>
+  </div>
+</div></section>
+
+<section id="speaking"><div class="wrap">
+  <h2>Speaking</h2>
+  <p class="sub">Community sessions.</p>
+  <div class="talk"><h3>Stop Switching Tabs</h3><p style="color:var(--muted);margin:6px 0 0">Slack Community Ajmer · 31 October 2026. Integrating Slack with Salesforce so teams work where they already are.</p></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Let’s connect</h2>
+  <p class="sub">Open to Salesforce, Agentforce and Revenue Cloud conversations.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/cybershivamtiwari" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn hide" data-link="linkedin" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn hide" data-link="trailblazer" target="_blank" rel="noopener">Trailblazer</a>
+    <a class="btn hide" data-link="blog" target="_blank" rel="noopener">Blog</a>
+    <a class="btn hide" data-link="email">Email</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Shivam Tiwari · Salesforce Developer &amp; Solutions Architect</div></footer>
+
+<script>
+// Fill these in; any empty link stays hidden so nothing on the page is broken.
+var LINKS = {
+  linkedin: "https://www.linkedin.com/in/dyanamo",
+  trailblazer: "https://www.salesforce.com/trailblazer/dynaamo",
+  blog: "", email: "", resume: "",
+  rcaLoader: "", swiftPizza: "", batchedAi: "", contextExecutor: ""
+};
+document.querySelectorAll("[data-link]").forEach(function(el){
+  var v = LINKS[el.getAttribute("data-link")];
+  if(v){ el.href = (el.getAttribute("data-link")==="email" ? "mailto:" : "") + v; el.classList.remove("hide"); }
+});
+document.getElementById("yr").textContent = new Date().getFullYear();
+document.getElementById("themeBtn").addEventListener("click", function(){
+  var r = document.documentElement;
+  var dark = r.getAttribute("data-theme")==="dark" ||
+    (!r.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  r.setAttribute("data-theme", dark ? "light" : "dark");
+});
+</script>
+</body>
+</html>
